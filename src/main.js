@@ -24,7 +24,18 @@ const errorAlert = [
 const allInputs = document.querySelector("form-control");
 // const cardnumber = document.querySelector("#cardnumber");
 
-function validation() {
+function validation(event) {
+  event.preventDefault();
+
+  var errorField = document.querySelector(".alert");
+  errorField.innerHTML = "";
+  !errorField.classList.contains("d-none") &&
+    errorField.classList.toggle("d-none");
+
+  var inputs = document.querySelectorAll("input");
+
+  inputs.forEach(input => input.classList.remove("invalid"));
+
   var cardnumber = document.querySelector("#cardnumber");
   var ccv = document.querySelector("#ccv");
   var amount = document.querySelector("#amount");
@@ -71,6 +82,8 @@ if (zipcode.value != 5) {
 function displayError(message) {
   var errorField = document.querySelector(".alert");
   errorField.innerHTML += `<p>${message}</p>`;
+  errorField.classList.contains("d-none") &&
+    errorField.classList.toggle("d-none");
 }
 document.querySelector("#myform").addEventListener("submit", validation);
 //add messages into fields

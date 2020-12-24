@@ -5,7 +5,7 @@
       <div class="card-header bg-transparent border-secondary">
         <h3>Payment Form Example</h3>
       </div>
-      <div class="alert alert-danger" role="alert">
+      <div class="alert alert-danger d-none" role="alert">
         Some fields are missing
       </div>
       <div class="card-body text-secondary">
@@ -152,14 +152,13 @@
             <input type="radio" id="other" name="card" value="other" />
             <label for="other"><i class="fab fa-cc-amex"></i></label>
           </div>
+          <button type="submit" class="btn btn-dark">Cancel</button>
+          <button type="submit" class="btn btn-primary">Send</button>
         </form>
       </div>
       <div
         class="card-footer d-flex justify-content-end bg-light border-secondary"
-      >
-        <button type="submit" class="btn btn-dark">Cancel</button>
-        <button type="submit" class="btn btn-primary">Send</button>
-      </div>
+      ></div>
     </div>
   </div>
 </html>
